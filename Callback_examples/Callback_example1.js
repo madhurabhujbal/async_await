@@ -15,5 +15,9 @@
 // }
 
 let greeting = name => console.log(`Hello ${name}!`);
+const userInfo = (firstName, lastName, callback) => {
+    const fullName = `${firstName} ${lastName}`;
+    callback(fullName);
+}
 
-greeting('John');
+userInfo('John', 'Doe', greeting);
