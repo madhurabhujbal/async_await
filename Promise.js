@@ -16,24 +16,26 @@
 const userLeft = false;
 const userWatchingCatMeme = false;
 
-function watchTutorialCallBack(callback, errorCallback) {
-    if (userLeft) {
-        errorCallback({
-            name: "User left",
-            message: ":("
-        });
-    } else if (userWatchingCatMeme) {
-        errorCallback({
-            name: "User watching cat memes",
-            message: "Something < cat"
-        });
-    } else {
-        callback("Thumbs up and subscribe");
-    }
+function watchTutorialPromise() {
+    return new Promise((resolve, reject) => {
+        if (userLeft) {
+            reject({
+                name: "User left",
+                message: ":("
+            });
+        } else if (userWatchingCatMeme) {
+            reject({
+                name: "User watching cat memes",
+                message: "Something < cat"
+            });
+        } else {
+            resolve("Thumbs up and subscribe");
+        }
+    });
 }
 
-watchTutorialCallBack((message) => {
+watchTutorialPromise().then((message) => {
     console.log("Success: " + message);
-}, (error) => {
+}).catch((error) => {
     console.log(error.name + " " + error.message);
 });
