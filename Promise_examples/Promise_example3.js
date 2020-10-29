@@ -10,10 +10,10 @@ const recordVideoThree = new Promise((resolve, reject) => {
     resolve("Video 3 Recorded");
 });
 
-Promise.all([
+Promise.race([ //race will console the first msg that comes instead of waiting for other operations to finish
     recordVideoOne,
     recordVideoTwo,
     recordVideoThree
-]).then((messages) => {
-    console.log(messages);
+]).then((message) => {
+    console.log(message);
 });
