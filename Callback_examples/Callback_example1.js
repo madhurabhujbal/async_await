@@ -5,3 +5,7 @@ setTimeout(() => {
 }, 3000);
 console.log("Tea");
 console.log("Eggs");
+
+const names = ['John', 'Mary', 'Bob'];
+const greet = names.map(name => `Hello ${name}`);
+console.log(greet);
