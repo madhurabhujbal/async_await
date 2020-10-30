@@ -1,4 +1,4 @@
-const hasMeeting = true;
+const hasMeeting = false;
 const meeting = new Promise((resolve, reject) => {
     if(!hasMeeting) {
         const meetingDetails = {
@@ -20,10 +20,11 @@ const meeting = new Promise((resolve, reject) => {
 // }
 const addToCalender = meetingDetails => {
         const calender = `${meetingDetails.name} is scheduled at ${meetingDetails.time} on ${meetingDetails.location}`;
-       return new Promise.resolve(calender);
+       return Promise.resolve(calender);
 }
 
 meeting
+.then(addToCalender)
 .then(res => {
     console.log('Meeting scheduled');
     console.log(res);
