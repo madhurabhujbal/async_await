@@ -1,4 +1,4 @@
-const hasMeeting = false;
+const hasMeeting = true;
 const meeting = new Promise((resolve, reject) => {
     if(!hasMeeting) {
         const meetingDetails = {
@@ -17,12 +17,25 @@ const addToCalender = meetingDetails => {
        return Promise.resolve(calender);
 }
 
-meeting
-.then(addToCalender)
-.then(res => {
-    console.log('Meeting scheduled');
-    console.log(res);
-})
-.catch(err => {
-    console.log(err.message);
-})
+async function myMeeting() {
+    try{
+        const meetingDetails = await meeting;
+        const message = await addToCalender(meetingDetails);
+        console.log(message);
+    }
+    catch(err){
+        console.log(err.message);
+    }
+}
+
+myMeeting();
+
+// meeting
+// .then(addToCalender)
+// .then(res => {
+//     console.log('Meeting scheduled');
+//     console.log(res);
+// })
+// .catch(err => {
+//     console.log(err.message);
+// })
