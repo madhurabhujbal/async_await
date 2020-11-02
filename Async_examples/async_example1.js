@@ -1,4 +1,4 @@
-const hasMeeting = false;
+const hasMeeting = true;
 const meeting = new Promise((resolve, reject) => {
     if(!hasMeeting) {
         const meetingDetails = {
@@ -23,7 +23,7 @@ async function myMeeting() {
     console.log(message);
 }
 
-myMeeting()
+myMeeting().catch(err => console.log(err.message));
 
 // meeting
 // .then(addToCalender)
