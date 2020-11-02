@@ -17,12 +17,20 @@ const addToCalender = meetingDetails => {
        return Promise.resolve(calender);
 }
 
-meeting
-.then(addToCalender)
-.then(res => {
-    console.log('Meeting scheduled');
-    console.log(res);
-})
-.catch(err => {
-    console.log(err.message);
-})
+async function myMeeting() {
+    const meetingDetails = await meeting;
+    const message = await addToCalender(meetingDetails);
+    console.log(message);
+}
+
+myMeeting()
+
+// meeting
+// .then(addToCalender)
+// .then(res => {
+//     console.log('Meeting scheduled');
+//     console.log(res);
+// })
+// .catch(err => {
+//     console.log(err.message);
+// })
