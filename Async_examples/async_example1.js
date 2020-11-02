@@ -18,12 +18,17 @@ const addToCalender = meetingDetails => {
 }
 
 async function myMeeting() {
-    const meetingDetails = await meeting;
-    const message = await addToCalender(meetingDetails);
-    console.log(message);
+    try{
+        const meetingDetails = await meeting;
+        const message = await addToCalender(meetingDetails);
+        console.log(message);
+    }
+    catch(err){
+        console.log(err.message);
+    }
 }
 
-myMeeting().catch(err => console.log(err.message));
+myMeeting();
 
 // meeting
 // .then(addToCalender)
