@@ -38,7 +38,7 @@ function videoDetails(video) {
 // .then(videos => videoDetails(videos[0]))
 // .then(detail => console.log(detail));
 
-async function displayUser() {
+async function displayUser() { //Code with async-await
     const loggedUser = await loginUser("ed", 12345);
     const videos = await getUserVideos(loggedUser.userEmail);
     const detail = await videoDetails(videos[0]);
