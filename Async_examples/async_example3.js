@@ -33,9 +33,25 @@ function videoDetails(video) {
 //     });
 // });
 
-loginUser("ed", "bumba")
-.then(user => getUserVideos(user.userEmail))
-.then(videos => videoDetails(videos[0]))
-.then(detail => console.log(detail));
+// loginUser("ed", "bumba")
+// .then(user => getUserVideos(user.userEmail))
+// .then(videos => videoDetails(videos[0]))
+// .then(detail => console.log(detail));
 
-console.log("Finish");
+// console.log("Finish");
+
+const youtube = new Promise(resolve => {
+    setTimeout(() => {
+        console.log("Getting stuff from youtube");
+        resolve( {videos: [1, 2, 3, 4, 5]} );
+    }, 2000);
+});
+
+const fb = new Promise(resolve => {
+    setTimeout(() => {
+        console.log("Getting stuff from facebook");
+        resolve( {user: "Name"} );
+    }, 6000);
+});
+
+Promise.all([youtube, fb]).then(result => console.log(result));
