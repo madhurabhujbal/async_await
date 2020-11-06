@@ -29,13 +29,3 @@ async function myMeeting() {
 }
 
 myMeeting();
-
-// meeting
-// .then(addToCalender)
-// .then(res => {
-//     console.log('Meeting scheduled');
-//     console.log(res);
-// })
-// .catch(err => {
-//     console.log(err.message);
-// })

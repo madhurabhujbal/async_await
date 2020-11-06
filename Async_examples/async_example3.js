@@ -26,12 +26,12 @@ function videoDetails(video) {
     });
 }
 
-// const user = loginUser("madhu@getmail.com", 12345, user => { //Code with callback
-//     console.log(user);
-//     getUserVideos(user.userEmail, videos => {
-//         console.log(videos);
-//     });
-// });
+const user = loginUser("madhu@getmail.com", 12345, user => { //Code with callback
+    console.log(user);
+    getUserVideos(user.userEmail, videos => {
+        console.log(videos);
+    });
+});
 
 // loginUser("ed", "bumba")
 // .then(user => getUserVideos(user.userEmail))
@@ -48,18 +48,18 @@ displayUser();
 
 // console.log("Finish");
 
-// const youtube = new Promise(resolve => { //Code with Promise
-//     setTimeout(() => {
-//         console.log("Getting stuff from youtube");
-//         resolve( {videos: [1, 2, 3, 4, 5]} );
-//     }, 2000);
-// });
+const youtube = new Promise(resolve => { //Code with Promise
+    setTimeout(() => {
+        console.log("Getting stuff from youtube");
+        resolve( {videos: [1, 2, 3, 4, 5]} );
+    }, 2000);
+});
 
-// const fb = new Promise(resolve => {
-//     setTimeout(() => {
-//         console.log("Getting stuff from facebook");
-//         resolve( {user: "Name"} );
-//     }, 6000);
-// });
+const fb = new Promise(resolve => {
+    setTimeout(() => {
+        console.log("Getting stuff from facebook");
+        resolve( {user: "Name"} );
+    }, 6000);
+});
 
 // Promise.all([youtube, fb]).then(result => console.log(result));
