@@ -1,19 +1,20 @@
-// //Sync code example
-
-// function otherfunction() {
-//     console.log("we are in other function");
-//     console.log("do some stuff");
-// }
-
-// console.log("Start");
-// otherfunction();
-// console.log("End");
+//Sync code example
+function synchronousFunction() {
+    console.log("we are in a synchronous function");
+    console.log("do some stuff");
+}
 
 //Async code example
-console.log("Start");
+function callSetTimeout() {
+    setTimeout(() => {
+        console.log("We are in an asynchrounous timeout");
+    }, 2000);
+}
 
-setTimeout(() => {
-    console.log("We are in a timeout");
-}, 2000);
+console.log("Start synchronous");
+synchronousFunction();
+console.log("End synchronous");
 
-console.log("End");
+console.log("Start asynchronous");
+callSetTimeout();
+console.log("End asynchrounous");
