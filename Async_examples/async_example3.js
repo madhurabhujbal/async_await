@@ -33,10 +33,10 @@ const user = loginUser("madhu@getmail.com", 12345, user => { //Code with callbac
     });
 });
 
-// loginUser("ed", "bumba")
-// .then(user => getUserVideos(user.userEmail))
-// .then(videos => videoDetails(videos[0]))
-// .then(detail => console.log(detail));
+loginUser("ed", "bumba")
+.then(user => getUserVideos(user.userEmail))
+.then(videos => videoDetails(videos[0]))
+.then(detail => console.log(detail));
 
 async function displayUser() { //Code with async-await
     const loggedUser = await loginUser("ed", 12345);
