@@ -46,8 +46,6 @@ async function displayUser() { //Code with async-await
 }
 displayUser();
 
-// console.log("Finish");
-
 const youtube = new Promise(resolve => { //Code with Promise
     setTimeout(() => {
         console.log("Getting stuff from youtube");
@@ -62,4 +60,4 @@ const fb = new Promise(resolve => {
     }, 6000);
 });
 
-// Promise.all([youtube, fb]).then(result => console.log(result));
+Promise.all([youtube, fb]).then(result => console.log(result));
