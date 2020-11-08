@@ -12,12 +12,6 @@ const meeting = new Promise((resolve, reject) => {
     }
 });
 
-// const addToCalender = meetingDetails => {
-//     return new Promise((resolve, reject) => {
-//         const calender = `${meetingDetails.name} is scheduled at ${meetingDetails.time} on ${meetingDetails.location}`;
-//         resolve(calender);
-//     });
-// }
 const addToCalender = meetingDetails => {
         const calender = `${meetingDetails.name} is scheduled at ${meetingDetails.time} on ${meetingDetails.location}`;
        return Promise.resolve(calender);
